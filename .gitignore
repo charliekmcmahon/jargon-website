@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+.DS_Store
+.env.local
+.env
+.env.*
+!.env.example
+
+# Private keys - NEVER commit these
+*.p8
+*.pem
+*.key
+AuthKey_*.p8
+
+# TypeScript incremental build cache
+*.tsbuildinfo

@@ -1,0 +1,265 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Mona Sans', sans-serif;
+  --font-display--font-variation-settings: 'wdth' 112.5;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-taupe-50: oklch(98.6% 0.002 67.8);
+  --color-taupe-100: oklch(96% 0.002 17.2);
+  --color-taupe-200: oklch(92.2% 0.005 34.3);
+  --color-taupe-300: oklch(86.8% 0.007 39.5);
+  --color-taupe-400: oklch(71.4% 0.014 41.2);
+  --color-taupe-500: oklch(54.7% 0.021 43.1);
+  --color-taupe-600: oklch(43.8% 0.017 39.3);
+  --color-taupe-700: oklch(36.7% 0.016 35.7);
+  --color-taupe-800: oklch(26.8% 0.011 36.5);
+  --color-taupe-900: oklch(21.4% 0.009 43.1);
+  --color-taupe-950: oklch(14.7% 0.004 49.3);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-taupe-100);
+    --scroll-padding-top: 0;
+    scroll-padding-top: var(--scroll-padding-top);
+
+    @variant dark {
+      background-color: var(--color-taupe-950);
+    }
+  }
+}
+
+/* iOS 26 Inspired Design System */
+@layer components {
+  /* iOS Card - Glass morphism with rounded corners */
+  .ios-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 10px 20px -5px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(0, 0, 0, 0.03);
+  }
+
+  @variant dark {
+    .ios-card {
+      background: rgba(40, 40, 45, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.2),
+        0 10px 20px -5px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+  }
+
+  /* iOS Card Inset - For nested content */
+  .ios-card-inset {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 14px;
+  }
+
+  @variant dark {
+    .ios-card-inset {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  /* iOS Modal */
+  .ios-modal {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border-radius: 28px 28px 0 0;
+    box-shadow: 
+      0 -10px 40px -10px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (min-width: 640px) {
+    .ios-modal {
+      border-radius: 28px;
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  @variant dark {
+    .ios-modal {
+      background: rgba(30, 30, 35, 0.95);
+      box-shadow: 
+        0 -10px 40px -10px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    @media (min-width: 640px) {
+      .ios-modal {
+        box-shadow: 
+          0 25px 50px -12px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+
+  /* iOS Primary Button */
+  .ios-button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: linear-gradient(180deg, #007AFF 0%, #0066DD 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 
+      0 4px 12px -2px rgba(0, 122, 255, 0.4),
+      0 0 0 1px rgba(0, 122, 255, 0.2) inset;
+  }
+
+  .ios-button-primary:hover {
+    background: linear-gradient(180deg, #0088FF 0%, #007AFF 100%);
+    transform: translateY(-1px);
+    box-shadow: 
+      0 6px 16px -2px rgba(0, 122, 255, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  }
+
+  .ios-button-primary:active {
+    transform: translateY(0);
+    box-shadow: 
+      0 2px 8px -2px rgba(0, 122, 255, 0.4),
+      0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  }
+
+  .ios-button-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* iOS Secondary Button */
+  .ios-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-taupe-700);
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .ios-button-secondary:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .ios-button-secondary:active {
+    background: rgba(0, 0, 0, 0.12);
+  }
+
+  @variant dark {
+    .ios-button-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--color-taupe-300);
+    }
+
+    .ios-button-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .ios-button-secondary:active {
+      background: rgba(255, 255, 255, 0.16);
+    }
+  }
+
+  /* iOS Stat Card */
+  .ios-stat-card {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  @variant dark {
+    .ios-stat-card {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  /* iOS Stat Card Large */
+  .ios-stat-card-large {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  @variant dark {
+    .ios-stat-card-large {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  /* iOS Spinner */
+  .ios-spinner {
+    width: 24px;
+    height: 24px;
+    border: 2.5px solid rgba(0, 0, 0, 0.08);
+    border-top-color: #007AFF;
+    border-radius: 50%;
+    animation: ios-spin 0.8s linear infinite;
+  }
+
+  .ios-spinner-small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-top-color: #007AFF;
+    border-radius: 50%;
+    animation: ios-spin 0.8s linear infinite;
+  }
+
+  .ios-spinner-large {
+    width: 32px;
+    height: 32px;
+    border: 3px solid rgba(0, 0, 0, 0.08);
+    border-top-color: #007AFF;
+    border-radius: 50%;
+    animation: ios-spin 0.8s linear infinite;
+  }
+
+  @variant dark {
+    .ios-spinner {
+      border-color: rgba(255, 255, 255, 0.08);
+      border-top-color: #0A84FF;
+    }
+    .ios-spinner-small {
+      border-color: rgba(255, 255, 255, 0.08);
+      border-top-color: #0A84FF;
+    }
+    .ios-spinner-large {
+      border-color: rgba(255, 255, 255, 0.08);
+      border-top-color: #0A84FF;
+    }
+  }
+
+  @keyframes ios-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
