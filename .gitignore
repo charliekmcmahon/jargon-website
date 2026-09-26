@@ -15,3 +15,5 @@ AuthKey_*.p8
 
 # TypeScript incremental build cache
 *.tsbuildinfo
+
+charlies-images

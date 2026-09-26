@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/hero.webp",
-        width: 1200,
-        height: 800,
+        width: 803,
+        height: 1602,
         alt: "Jargon App - Daily word, definition, and pronunciation, generated on-device"
       }
     ]

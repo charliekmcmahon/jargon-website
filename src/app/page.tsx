@@ -174,10 +174,10 @@ export default function Page() {
         {/* Hero */}
         <HeroCenteredWithDemo
           id="hero"
-          headline="Learn a word. Any language."
+          headline="A word a day. But better."
           subheadline={
             <div>
-              <p>Meet Jargon™, the on-device AI word coach for language learners.</p>
+              <p>Meet Jargon, the free, on-device AI word coach for language learners/enthusiasts.</p>
             </div>
           }
           cta={
@@ -197,18 +197,18 @@ export default function Page() {
           demo={
             <>
               <img
-                className="hidden sm:block bg-transparent"
+                className="hidden sm:block bg-transparent mx-auto max-w-xs"
                 src="/hero.webp"
                 alt="Jargon App Screenshot"
-                width="1200"
-                height="800"
+                width="803"
+                height="1602"
               />
               <img
-                className="block sm:hidden bg-transparent"
+                className="block sm:hidden bg-transparent mx-auto max-w-2xs"
                 src="/hero-mobile.webp"
                 alt="Jargon App Screenshot"
-                width="1200"
-                height="800"
+                width="500"
+                height="998"
               />
             </>
           }
@@ -234,45 +234,43 @@ export default function Page() {
                 demo={
                   <Screenshot wallpaper="blue" placement="stretch-y">
                     <img
-                      src="/screenshots-mockups/language-pickers.png"
+                      src="/screenshots-mockups/language-pickers.webp"
                       alt="Language pickers"
-                      className=""
-                      width={600}
-                      height={400}
+                      width={1206}
+                      height={900}
                     />
                   </Screenshot>
                 }
-                headline="Any Language, Any Language"
+                headline="Sprache? Langue? Idioma?"
                 subheadline={<p>Mix and match any of 13 languages. Pick what you speak and what you're learning, and Jargon handles the rest.</p>}
               />
               <FeatureThreeColumnWithDemos
                 demo={
-                  <Screenshot wallpaper="purple" placement="top">
+                  <Screenshot wallpaper="purple" placement="stretch-y">
                     <img
-                      src="/screenshots-mockups/word-card.png"
+                      src="/screenshots-mockups/word-card.webp"
                       alt="Word of the day card"
-                      className=""
-                      width={600}
-                      height={400}
+                      className="h-full w-full object-cover"
+                      width={803}
+                      height={534}
                     />
                   </Screenshot>
                 }
-                headline="Generated Just for You"
-                subheadline={<p>Every word, definition, and example sentence is crafted on-device by Apple Intelligence, and Jargon never repeats a word twice.</p>}
+                headline="Explain, Pronounce, Listen"
+                subheadline={<p>Open the app to have your on-device AI explain, pronounce, and let you listen to the word in context.</p>}
               />
               <FeatureThreeColumnWithDemos
                 demo={
-                  <Screenshot wallpaper="brown" placement="top">
+                  <Screenshot wallpaper="brown" placement="middle">
                     <img
-                      src="/screenshots-mockups/widgets.png"
+                      src="/screenshots-mockups/widgets.webp"
                       alt="Home Screen and Lock Screen widgets"
-                      className=""
-                      width={600}
-                      height={400}
+                      width={1206}
+                      height={549}
                     />
                   </Screenshot>
                 }
-                headline="Always One Glance Away"
+                headline="Did somebody say widgets?"
                 subheadline={<p>Add today's word to your Home Screen or Lock Screen, so a new word is always within reach.</p>}
               />
             </>
